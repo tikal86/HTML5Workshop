@@ -1,0 +1,17 @@
+html { text-align: center; font-family: sans-serif; }
+body { width: 1150px; margin: 0 auto 0 auto; text-align: left; padding: 5px; }
+header { width: 100%; display: table; }
+nav { width: 200px; height:442px; float: left; display: table; }
+article { width: 950px; display: table; }
+aside { width: 300px; float: right; display: table; }
+footer { text-align: center; }
+
+body { background-color: black; }
+header { background-color: red; }
+nav { background-color: #f02c32; color: white;}
+article { background-color: gray; }
+section {background-color: #666666; }
+footer { background-color: red; color: white;}
+aside { background-color: green; }
+a {color: white;}
+h2 {color: white;}
