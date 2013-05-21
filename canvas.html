@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Drawing</title>
+        <script>
+  		var surface;
+			var happy;
+			var x = 50;
+			var y = 0;
+			var dirX = 1;
+			var dirY = 1;
+			var angle = 0;
+
+			function drawCanvas() {
+			    // Get our Canvas element
+			    surface = document.getElementById("myCanvas");
+
+			    if (surface.getContext) {
+			        // If Canvas is supported, load the image
+				    // Grab the context
+				    var surfaceContext = surface.getContext('2d');
+				    // Clear the canvas to White
+				    surfaceContext.fillStyle = "rgb(255,255,255)";
+				    surfaceContext.fillRect(0, 0, surface.width, surface.height);
+
+					// blauwe lijn
+					surfaceContext.beginPath();
+					surfaceContext.lineWidth = 20;
+					surfaceContext.moveTo(10,10); // ga naar het start punt
+					surfaceContext.lineTo(10,200);
+					surfaceContext.lineTo(100, 100);
+					surfaceContext.strokeStyle = '#8888ff';
+					surfaceContext.stroke();
+					// gebogen paden
+				    surfaceContext.beginPath();
+				    surfaceContext.lineWidth = 20;
+				    surfaceContext.moveTo(140,100); // ga naar het start punt
+				    surfaceContext.arcTo(140,250, 190, 250, 50);
+				    surfaceContext.arcTo(240,250, 340, 100, 100);
+				    surfaceContext.strokeStyle = '#ff8888';
+				    surfaceContext.stroke();
+					// groen vierkant -> met 50% alpha (transparant)
+					surfaceContext.fillStyle = 'rgba(150, 255, 100, 0.5)';
+					surfaceContext.fillRect(200, 100, 400, 300);
+			    }
+			}
+		</script>
+    </head>
+    <body onload="drawCanvas();">
+        <h1>Drawing shapes</h1>
+	    <div>
+	        <canvas id="myCanvas" width="600" height="600">
+	            <p>Your browser doesn't support canvas.</p>
+	        </canvas>
+	    </div>
+    </body>
+</html>

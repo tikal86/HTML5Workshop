@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Animation</title>
+        <script>
+            var tekenvel;
+            var koe;
+            var x = 50;
+            var y = 0;
+            var hoek = 0;
+
+            function drawCanvas() {
+                                // het Canvas element
+                tekenvel = document.getElementById("mijnTekenvel");
+
+                if (tekenvel.getContext) {
+                    // Als Canvas ondersteund wordt, laad het plaatje
+                    koe = new Image();
+                    koe.onload = loadingComplete;
+                    koe.src = "images/tschai.jpg";
+                }
+            }
+
+            function loadingComplete(e) {
+                // Als het plaatje helemaal geladen is, start de animatie
+                setInterval(rotate, 25);
+            }
+
+            function rotate() {
+                // In elke lus roteren we het plaatje een beetje
+                // Haal de context op.
+                var tekenvelContext = tekenvel.getContext('2d');
+
+                    // Maak het hele canvas wit
+                tekenvelContext.fillStyle = "rgb(255,255,255)";
+                tekenvelContext.fillRect(0, 0, tekenvel.width, tekenvel.height);
+
+                // Bewaar de huidige context
+                tekenvelContext.save();
+                // Verplaats het nulpunt naar het middelpunt van ons plaatje
+                tekenvelContext.translate(koe.width * 0.5, koe.height * 0.5);
+                // Doe de rotatie om het nulpunt
+                tekenvelContext.rotate(DegToRad(hoek));
+                // Verplaats het nulpunt terug naar de linksbovenhoek van het plaatje
+                tekenvelContext.translate(-koe.width * 0.5, -koe.height * 0.5);
+                // Teken het plaatje
+                tekenvelContext.drawImage(koe, 0, 0);
+                // herstel de originele context
+                tekenvelContext.restore();
+
+                // Pas de hoek aan
+                hoek++;
+                if (hoek == 360) {
+                    hoek = 0;
+                }
+            }
+
+            function DegToRad(d) {
+                // Converts degrees to radians
+                return d * 0.0174532925199432957;
+            }
+
+        </script>
+    </head>
+    <body onload="drawCanvas();">
+        <h1>Rotating an image</h1>
+        <div>
+            <canvas id="mijnTekenvel" width="600" height="600">
+                <p>Uw browser ondersteund geen HTML5 canvas.</p>
+            </canvas>
+        </div>
+    </body>
+</html>
