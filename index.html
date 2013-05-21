@@ -2,7 +2,22 @@
 	<html>
 		<head>
 			<title>Html5 struktuur</title>
-			<link  rel="stylesheet" type="text/css" href="/css/lab1.css" />
+			<style>
+				html { text-align: center; font-family: sans-serif; }
+				body { width: 1250px; margin: 0 auto 0 auto; text-align: left; padding: 5px; }
+				header { width: 100%; display: table; }
+				nav { width: 300px; float: left; display: table; }
+				article { width: 950px; display: table; }
+				footer { text-align: center; }
+
+				/* Below I have added background colors so you can see where each element is. You can delete them if you want. This is an additional change I made to new-template.htm. */
+				body { background-color: green; }
+				header { background-color: red; }
+				nav { background-color: yellow; }
+				article { background-color: blue; }
+				footer { background-color: orange; }
+
+			</style>
 
 		</head>
 	    <body>
@@ -16,41 +31,23 @@
 				</ul>
 			</nav>
 
-	        <h2>HTML struktuur</h2>
+	        <h1>HTML struktuur</h1>
 	        <article>
-	        	<title>Nieuwe HTML5 elementen</title>
-	        	
-	        	<section>
-	        		<title>Html elementen</title>
-	        		Dit lab introduceert een aantal wijzigingen die html 5 brengt t.o.v. ouder html versies.
-We behandelen niet alle wijzigingen, dat zijn er te veel, maar hebben een aantal geselecteerd waarvan wij denken dat je die vaak zult gebruiken.
-	        	</section>
-	        	<section>
-	        		<title>Voordelen van Html5 over oudere versies</title>
-	        		Html5 lost een aantal beperkingen van oudere html versies op. Omdat het parsen niet op SGML gebaseerd is, is het meer flexibel (het benodigd geen DTD meer) en verbeterd het de compatibiliteit.
-De nieuwe elementen bieden betere structuur mogelijkheden en nieuwe typen van form controls voor het makkelijker maken van formulieren.
-Verouderde elementen zijn verwijderd en nieuwe attributen toegevoegd.
-SVG en MathML kunnen nu inline worden toegevoegd.
-Html5 wordt nu aanbevolen door de W3C, omdat het voldoet aan de meeste gebruikers behoeften en ondersteuning biedt aan moderne media.
-	        		
-					<aside>
-					  <h4>HTML5</h4>
-					  <p>Html 5 is een nieuwe versie van de html standaard, als gedefinieerd door de W3C.</p>
-					</aside>
-	        	</section>
-	        	Deze workshop introduceert een aantal html5 concepten
-	        	<section>
-	        		In deze workshop gebruiken we een aantal dierenplaatjes en geluiden, zoals
-					<figure>
-					  <img src="/images/cow.jpg" alt="Koe" height="75" width="100">
-					  <img src="/images/whale.jpg" alt="Walvis" height="75" width="100">
-					  <img src="/images/cat.jpg" alt="Kat" height="75" width="100">
-					  <figcaption>Een koe, walvis en kat. Voor de workshop <a href="https://github.com/VXCompany/HTML5Workshop/wiki/HTML5-Lab1">Html5</a></figcaption>
-					</figure>
-	        	</section>
-			Als je dit lab af hebt, heb je	<progress value="1" max="6"></progress> van de totale workshop gedaan.
-			<p>Het lab start om <time>18:00</time> op donderdag 30 mei.</p>
+	        	<title>Article 1</title>
+	        	<section></section>
+	        	<section></section>
 	        </article>
+			<p>My family and I visited The Epcot center this summer.</p>
 
+			<figure>
+			  <img src="images/cow.jpg" alt="Koe">
+			  <img src="images/whale.jpg" alt="Walvis">
+			  <img src="images/cat.jpg" alt="Kat">
+			  <figcaption>Een koe, walvis en kat. Voor de workshop <a href="https://github.com/VXCompany/HTML5Workshop/wiki/HTML5-Lab1">Html5</a></figcaption>
+			</figure>
+			<aside>
+			  <h4>Epcot Center</h4>
+			  <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+			</aside>
 			<footer>Html5 Workshop, <a href="http://www.vxcompany.com/">VX Company</a></footer>
 	</html>
